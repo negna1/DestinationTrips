@@ -1,0 +1,38 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Destination {
+    id: ID!
+    title: String!
+    description: String!
+    created_at: String!
+}
+
+type DestinationResult {
+    success: Boolean!
+    errors: [String]
+    destination: Destination
+}
+
+type DestinationsResult {
+    success: Boolean!
+    errors: [String]
+    destination: [Destination]
+}
+
+type GeneralSuccessError {
+    success: Boolean!
+    errors: [String]
+}
+
+type Query {
+    listDestinations: DestinationsResult!
+    getDestination(id: ID!): DestinationResult!
+}
+
+type Mutation {
+    createDestination(title: String!, description: String!, created_at: String): DestinationResult!
+    removeDestination(title: String!, description: String!): GeneralSuccessError!
+}

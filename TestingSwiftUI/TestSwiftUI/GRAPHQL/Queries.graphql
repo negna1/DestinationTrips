@@ -1,0 +1,44 @@
+
+
+query GetDestination {
+  getDestination(id: 1) {
+    destination {
+      id
+      title
+      description
+      created_at
+    }
+    success
+    errors
+  }
+}
+
+query GetDestinations {
+  listDestinations {
+    destination {
+      title
+      description
+    }
+    success
+    errors
+  }
+}
+
+mutation CreateNewDestination (
+    $title: String!,
+    $description: String!){
+  createDestination(
+    title: $title,
+    description: $description) {
+    destination {
+      id
+      title
+      description
+      created_at
+    }
+    success
+    errors
+  }
+}
+
+
