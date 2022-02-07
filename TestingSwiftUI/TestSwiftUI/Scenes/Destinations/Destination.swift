@@ -17,14 +17,9 @@ struct Destination: View {
         
         NavigationView {
             VStack {
-//                NavigationLink("",
-//                               isActive: $viewModel.tapButton,
-//                               destination: {
-//                    let model = CreateNewDestinationViewModel()
-//                    model.$trips = viewModel.$trips
-//                    CreateNewDestination(viewModel: CreateNewDestinationViewModel())
-//
-//                })
+                NavigationLink("",
+                               isActive: $viewModel.tapButton,
+                               destination: {CreateNewDestination(viewModel: CreateNewDestinationViewModel())})
                 TopBarMenu(tapButton: $viewModel.tapButton)
                 Spacer()
                     ZStack {
